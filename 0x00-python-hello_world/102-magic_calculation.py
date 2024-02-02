@@ -1,2 +1,6 @@
-def magic_calculation(a, b=98):
-    return b + b ** a
+"""Defines magic_calculation method."""
+
+
+def magic_calculation(a, b):
+    """Performs calculation as shown in the provided Python Bytecode."""
+    return 98 + a ** b
