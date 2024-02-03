@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-
-for i in reversed(range(65, 91)):
-    if i % 2 == 0:
-        print(chr(i + 32), end="")
+for alphabet in range(122, 96, -1):
+    if alphabet % 2 == 0:
+        diff = 0
     else:
-        print(chr(i), end="")
+        diff = 32
+    print("{:c}" .format(alphabet - diff), end="")
