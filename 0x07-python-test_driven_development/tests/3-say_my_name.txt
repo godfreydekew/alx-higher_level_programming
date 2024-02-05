@@ -1,51 +1,42 @@
-#3-say_my_name.txt
+=======================
+Using 3-say_my_name.py
+=======================
 
-===========================
-Using 3-say_my_name.txt
-===========================
+Using the function ``say_my_name(first_name, last_name="")``.
 
-``say_my_name(first_name, last_name="")`` returns
-  <first name> <last name>
-
-
-First import the function from the  3-say_my_name file:
-
-	>>> say_my_name = __import__('3-say_my_name').say_my_name
+Usage
+=====
+The function prints ``My name is <first name> <last name>``.
 
 
-Then start to use it:
-
-	>>> say_my_name("Godfrey", "Dekera")
-	My name is Godfrey Dekera
-
-``last_name`` has a default value of an empty string
-
-	>>> say_my_name("Godfrey")
-	My name is Godfrey
+First import the function from the 3-say_my_name file:
 
 
-Exceptions
-==========
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-A type error is raised if `first_name`` and ``last_name``
- are not strings
+Then use it:
 
-	>>> say_my_name
-	Traceback (most recent call last):
-	TypeError: first_name must be a string
+    >>> say_my_name("Emma", "Smith")
+    My name is Emma Smith
 
-	>>> say_my_name("godie", 2)
-	Traceback (most recent call last):
-	TypeError: last_name must be a string
+The parameter ``last_name`` has a default value of an empty string ``""``:
 
-	>>> say_my_name(4, 2)
-	Traceback (most recent call last):
-	TypeError: first_name must be a string
 
-	>>> say_my_name([5, 6, 7], 2)
-	Traceback (most recent call last):
-	TypeError: first_name must be a string
+    >>> say_my_name("Emma")
+    My name is Emma 
 
-	>>> say_my_name()
-	Traceback (most recent call last):
-	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+Exception
+=========
+
+``first_name`` and ``last_name`` must be strings. Otherwise,
+a TypeError is raised.
+
+
+    >>> say_my_name(7, "Smith")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Emma", 8)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
