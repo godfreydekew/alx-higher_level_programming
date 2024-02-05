@@ -1,6 +1,12 @@
 #!/usr/bin/python3
+""" Defines a class called LockedClass. """
+
+
 class LockedClass:
-    """a class LockedClass with no class or object attribute,
-    that prevents the user from dynamically
-     creating new instance attributes,"""
-    __slots__ = ['first_name']
+    """ LockedClass
+
+    Prevents the user from dynamically creating new instance,
+    except it is called 'first_name'.
+    """
+
+    __slots__ = ["first_name"]
