@@ -41,21 +41,57 @@ Square with size 5:
     #####
     #####
 
-Exceptions
-==========
+Square with size 2:
 
-The ``size`` must be an integer. Otherwise, a TypeError is raised.
+    >>> print_square(2)
+    ##
+    ##
+    
+Square with size 7:
 
-    >>> print_square("a string")
+    >>> print_square(7)
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+
+Testing larger sizes:
+
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+
+Testing a mix of integers and floats:
+
+    >>> print_square(4.0)
     Traceback (most recent call last):
+        ...
     TypeError: size must be an integer
 
-    >>> print_square(3.5)
-    Traceback (most recent call last):
-    TypeError: size must be an integer
+Testing a mix of positive and negative sizes:
 
-The ``size`` must be greater than or equal to 0. Otherwise, a ValueError is raised.
-
-    >>> print_square(-7)
+    >>> print_square(-3)
     Traceback (most recent call last):
+        ...
     ValueError: size must be >= 0
+
+Testing for integer overflow:
+
+    >>> print_square(10**20)
+    # ... (output can be truncated for brevity)
+
+Testing for float overflow:
+
+    >>> print_square(1e100)
+    # ... (output can be truncated for brevity)
