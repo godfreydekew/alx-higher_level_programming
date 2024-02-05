@@ -50,6 +50,12 @@ The second argument `b` has a default value of 98.
 	>>> add_integer(2)
 	100
 	
+With float overflow (sum exceeds the maximum representable finite float value):
+
+	>>> add_floats(1e308, 1e308)
+	Traceback (most recent call last):
+		...
+	OverflowError: Float overflow: the sum exceeds the maximum representable finite float value.
 
 Exception
 =========
