@@ -3,11 +3,8 @@
 
 
 class MyList(list):
-    """Inherits  from list class"""
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    """Implements sorted printing for the built-in list class."""
 
     def print_sorted(self):
-        """prints the list, but sorted (ascending sort)"""
-        print(sorted([self.__getitem__(i) for i in range(self.__len__())]))
+        """Print a list in sorted ascending order."""
+        print(sorted(self))
