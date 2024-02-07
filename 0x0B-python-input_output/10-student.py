@@ -23,7 +23,6 @@ class Student:
         Returns:
             dict: A dictionary containing attribute names and values.
         """
-        if attrs and all(isinstance(s, str) for s in attrs):
-            return {key: value for key, value in self.__dict__.items()
-                    if key in attrs}
+        if (type(attrs)) == list and all(isinstance(s, str) for s in attrs):
+            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         return self.__dict__
