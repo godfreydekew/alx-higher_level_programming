@@ -30,4 +30,4 @@ class Student:
     def reload_from_json(self, json):
         """Replace all attribute of a Student."""
         for key, value in json.items():
-            setattr(key, value)
+            setattr(self, key, value)
