@@ -9,4 +9,5 @@ SELECT name
 			FROM tv_shows
 			WHERE title = "Dexter"
 		)
-	);
+	)
+	ORDER BY name;
