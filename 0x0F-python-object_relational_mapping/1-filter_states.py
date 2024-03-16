@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""lists all states from the database hbtn_0e_0_usa"""
+"""lists all states from the database hbtn_0e_0_usa
+    starting with N
+"""
 
 if __name__ == '__main__':
 
@@ -16,7 +18,7 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     script = "ORDER BY states.id ASC"
-    cur.execute(f"SELECT * FROM states WHERE name LIKE 'N%' {script}; ")
+    cur.execute(f"SELECT * FROM states WHERE name LIKE 'N%' {script};")
     rows = cur.fetchall()
     for row in rows:
         print(row)
