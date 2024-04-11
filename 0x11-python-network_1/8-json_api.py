@@ -1,21 +1,25 @@
 #!/usr/bin/python3
-"""Post request and cathing errors"""
+''' Sends a POST request to http://0.0.0.0:5000/search_user
+    with a given letter as a parameter.
+
+Usage: ./8-json_api.py <letter>
+'''
 import requests
 import sys
-import json
 
-if __name__ == '__main__':
-    url = "http://0.0.0.0:5000/search_user"
-    chr = sys.argv[1] if len(sys.argv) == 2 else ""
-    params = {
-        'q': chr
-    }
-    response = requests.post(url, data=params)
+
+if __name__ == "__main__":
+    letter = "" if len(sys.argv) == 1 else sys.argv[1]
+
+    payload = {"q": letter}
+
+    r = requests.post('http://0.0.0.0:5000/search_user', data=payload)
+
     try:
-        data = response.json()
-        if len(data):
-            print(f"[{data['id']}] {data['name']}")
-        else:
+        response = r.json()
+        if response == {}:
             print("No result")
-    except json.decoder.JSONDecodeError:
+        else:
+            print("[{}] {}".format(response.get("id"), response.get("name")))
+    except ValueError:
         print("Not a valid JSON")
